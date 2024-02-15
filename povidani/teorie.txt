@@ -1,0 +1,10 @@
+Django je webový framework  
+
+Frameworky x knihovny
+
+
+MVC architektura
+model, view, controller
+
+MTV
+model, template, view 
