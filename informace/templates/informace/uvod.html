@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vítejte v naší zoo!</h1>
+    <p>V naší zoo je {{ pocet }} zvířat a 
+        náš ředitel se jmenuje {{ sef }}.</p>
+    <a href="{% url 'seznam_zvirat' %}">Seznam zvířat</a><br> 
+    <a href="{% url 'o_zviratech' %}">Povídání o zvířatech.</a><br>  
+    <a href="{% url 'zirafa' %}">Naše nejoblíbenější zvíře je žirafa.</a>   
+    <!-- tohle je HTML komentář
+    tajné heslo: orangutan
+    
+    -->
+
+    {# tohle je jednořádkový Django komentář #}
+
+    {% comment "sem můžu napsat jméno komentáře" %}
+    Sem taky můžu napsat jméno komentáře
+    Tohle je víceřádkový Django komentář
+
+    tajné heslo číslo 2: lenochod
+    {% endcomment %}
+</body>
+</html>

@@ -20,5 +20,5 @@ from informace.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("informace/", include("informace.urls")),
-    path("", index)
+    path("", index, name="uvod")
 ]

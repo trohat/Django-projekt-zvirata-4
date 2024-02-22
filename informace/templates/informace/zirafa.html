@@ -10,6 +10,21 @@
 
     <p>Žirafa má dlouhý krk...</p>
 
+    {% if delka_krku > 7 %}
+        <p>Ten krk je fakt dlouhý!</p>
+    {% else %}
+        <p>Jako je dlouhý, ale zas tak moc ne.</p>
+    {% endif %}
+
+    {% if seznam_ziraf %}
+    <p>V našem výběhu jsou {{ seznam_ziraf|length }} žirafy.</p>
+    <p>Do deseti žiraf chybí {{ chybi }} žiraf.</p>
+    {% else %}
+    <p>Žádné žirafy nemáme.</p>
+    {% endif %}
+
+
+
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Giraffe_2019-07-28.jpg/280px-Giraffe_2019-07-28.jpg" alt="">
 </body>
 </html>

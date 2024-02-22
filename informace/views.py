@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
+from datetime import datetime
 
 # Create your views here.
 
@@ -22,29 +23,52 @@ def o_zvireti(request, zvire):
     print(f"Přišel mi parametr {zvire}")
     if zvire in slovnik:
         popis = slovnik[zvire]
-        odpoved = ""
         if zvire in diakritika:
-            odpoved += f"<h1>{diakritika[zvire].capitalize()}</h1>"
-        else:
-            odpoved += f"<h1>{zvire.capitalize()}</h1>"
-        odpoved += f"<p>{popis}</p>"
-        print(odpoved)
-        return HttpResponse(odpoved)
+            zvire = diakritika[zvire]
+     
+        return render(request, "informace/zvire.html", {
+            "popis": popis,
+            "jmeno_zvirete": zvire
+        })
     else:
         return HttpResponseNotFound(f"{zvire} není v naší zoo.")
+
+def seznam(request):
+    return render(request, "informace/seznam.html", {
+        "seznam": list(slovnik.keys())
+    })
 
 def zirafa(request):
     # load template
     # create template    
     # load context  
     # return template with context
-    return render(request, "informace/zirafa.html")
+    # create HttpResponse
+    min_pocet_pro_akci = 10
+    seznam = ["a", "b"]
+    chybi_do_deseti = min_pocet_pro_akci - len(seznam)
+    return render(request, "informace/zirafa.html", {
+        "delka_krku": 3,
+        "seznam_ziraf": seznam,
+        "chybi": chybi_do_deseti
+    })
 
 def o_zviratech(request):
-    return HttpResponse("<p>Máme rádi zvířata</p>")
+    return render(request, "informace/o_zviratech.html", {
+        "zvire1": "orangutan",
+        "zvire2": "gORILA",
+        "mysi": 3,
+        "otevreny_pavilon": True,
+        "datum": datetime.now()
+    })
 
 def index(request):
-    return HttpResponse("<h2>Vítejte v naší aplikaci o zvířatech</h2>")
+    sef = "Lukáš Chovatel-tygrů"
+    pocet_zvirat = 253
+    return render(request, "informace/uvod.html", {
+        "sef": sef,
+        "pocet": pocet_zvirat
+    })
 
 def cislo(request, zvire):
     return HttpResponse(f"<h2>Číslo zvířete je {zvire}</h2>")
