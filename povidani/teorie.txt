@@ -8,3 +8,5 @@ model, view, controller
 
 MTV
 model, template, view 
+
+DTL = django template language

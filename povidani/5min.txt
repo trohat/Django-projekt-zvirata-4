@@ -1,0 +1,8 @@
+
+1.) Co znamená zkratka MVC, co znamenají jednotlivá písmena a dodejte něco o nich.
+
+2.) Co je to router a k čemu je dobrý? V jakém souboru bývá v Djangu zpravidla umístěn?
+
+3.) Co je to view funkce? Jakou část MVC architektury tvoří? - je to v podstatě Controller, kontroluje celý proces
+
+4.) Jaké jsou zbývající části MVC architektury? Kdy se o nich budeme učit?

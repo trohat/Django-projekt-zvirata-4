@@ -34,10 +34,20 @@ def o_zvireti(request, zvire):
         return HttpResponseNotFound(f"{zvire} není v naší zoo.")
 
 def zirafa(request):
-    return HttpResponse("<h1>Žirafa má dlouhý krk</h1>")
+    # load template
+    # create template    
+    # load context  
+    # return template with context
+    return render(request, "informace/zirafa.html")
 
 def o_zviratech(request):
     return HttpResponse("<p>Máme rádi zvířata</p>")
 
 def index(request):
     return HttpResponse("<h2>Vítejte v naší aplikaci o zvířatech</h2>")
+
+def cislo(request, zvire):
+    return HttpResponse(f"<h2>Číslo zvířete je {zvire}</h2>")
+
+def taxonomie(request, kategorie, druh):
+    return HttpResponse(f"<p>Kategorie je {kategorie}.</p><p>Druh je {druh}.</p>")
