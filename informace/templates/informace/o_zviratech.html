@@ -9,8 +9,8 @@
     <h1>Něco o našem zoo</h1>
     <p>Naše nejhlasitější opice je {{ zvire1|upper }}.</p>
     <p>Naše nejtišší opice je {{ zvire2|lower|capfirst }}. Haha.</p>
-
-
-    <p>Dnešní datum je {{ datum|date:"j. n. Y --- H:i" }}.</p>
+    <p>Po zoo nám bě{{ mysi|pluralize:"há,ží"}} {{ mysi }} myš{{ mysi|pluralize:"i" }}.</p>
+    <p>Pavilon tygrů je dnes {{ otevreny_pavilon|yesno:"otevřen,zavřen, velmi špinavý" }}. </p>
+    <p>Dnešní datum je {{ datum|date:"j. n. Y" }}.</p>
 </body>
 </html>

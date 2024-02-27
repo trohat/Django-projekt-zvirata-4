@@ -58,7 +58,7 @@ def o_zviratech(request):
         "zvire1": "orangutan",
         "zvire2": "gORILA",
         "mysi": 3,
-        "otevreny_pavilon": True,
+        "otevreny_pavilon": None,
         "datum": datetime.now()
     })
 

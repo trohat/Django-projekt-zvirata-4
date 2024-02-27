@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seznam zvířat</title>
-</head>
-<body>
-    <h1>Seznam zvířat</h1>
+{% extends "./base.html" %}
 
-    <ul>
-        {% for zvire in seznam %}
-        <li><a href="{% url 'zvire' zvire %}">{{ zvire|capfirst }}</a></li>
-        {% endfor %}
-    </ul>
+{% block title %}
+Seznam zvířat
+{% endblock %}
 
-    <a href="{% url 'uvod' %}">Zpět na úvodní stránku</a>
-</body>
-</html>
+{% block hlavni %}
+<h1>Seznam zvířat</h1>
+
+<ul>
+    {% for zvire in seznam %}
+    <li><a href="{% url 'zvire' zvire %}">{{ zvire|capfirst }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'uvod' %}">Zpět na úvodní stránku</a>
+{% endblock %}
