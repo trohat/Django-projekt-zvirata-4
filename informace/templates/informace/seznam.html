@@ -1,4 +1,9 @@
-{% extends "./base.html" %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "informace/style.css" %}">
+{% endblock %}
 
 {% block title %}
 Seznam zvířat
@@ -14,4 +19,4 @@ Seznam zvířat
 </ul>
 
 <a href="{% url 'uvod' %}">Zpět na úvodní stránku</a>
-{% endblock %}
+{% endblock hlavni %}

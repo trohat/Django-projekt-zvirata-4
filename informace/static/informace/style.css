@@ -1,0 +1,9 @@
+/* tohle je statický soubor, to znamená, nemění se!!! */
+
+
+/* mohl by to být i JavaScript */
+
+h1 {
+    color: blue;
+    background-color: aqua;
+}

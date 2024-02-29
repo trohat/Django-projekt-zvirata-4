@@ -12,3 +12,7 @@ model, template, view
 DTL = django template language
 
 v šablonách existují tagy a filtry
+
+
+statický - zůstává stejný (pro nás CSS, JavaScript)
+dynamický - mění se (pro nás Django-verze HTML)
