@@ -1,4 +1,5 @@
 """
+CRUD
 
 #CREATE:
 opice = Zvire(jmeno="Jitka", druh="gorila", vek=13, popis="Má ráda banány")
