@@ -1,19 +1,26 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static "informace/style.css" %}">
-</head>
-<body>
-    <h1>{{ jmeno_zvirete|capfirst }}</h1>
-    <p>{{ popis }}</p>
+{% block title %}
+Stránka o zvířeti {{ zvire.druh|lower }}
+{% endblock %}
 
-    <a href="{% url 'seznam_zvirat' %}">Zpět na seznam zvířat</a>
+{% block css %}
+<link rel="stylesheet" href="{% static "informace/style.css" %}">
+{% endblock %}
 
-    <script src="{% static "informace/script.js" %}"></script>
-</body>
-</html>
+{% block hlavni %}
+<div>
+    <h1>{{ nadpis|capfirst }}</h1>
+    <p>{{ nadpis|capfirst }} má {{ zvire.vek }} let.</p>
+    <p>První popis: {{ zvire.popis }}.</p>
+    <p>Druhý popis: {{ popis }}.</p>
+    <p>Má barvu: {{ zvire.barva }}.</p>
+</div>
+
+<a href="{% url 'seznam_zvirat' %}">Zpět na seznam zvířat</a>
+{% endblock hlavni %}
+
+{% block js %}
+<script src="{% static "informace/script.js" %}"></script>
+{% endblock %}

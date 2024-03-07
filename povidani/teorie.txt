@@ -16,3 +16,7 @@ v šablonách existují tagy a filtry
 
 statický - zůstává stejný (pro nás CSS, JavaScript)
 dynamický - mění se (pro nás Django-verze HTML)
+
+
+view může být funkce nebo třída
+tedy, view funkce nebo class-based view
