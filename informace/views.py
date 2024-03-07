@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import render, get_object_or_404
+from django.http import Http404, HttpResponse, HttpResponseNotFound
 from datetime import datetime
 
 from .models import Zvire
@@ -7,16 +7,18 @@ from .models import Zvire
 # Create your views here.
 
 def o_zvireti(request, id):
-    try:
-        zvire = Zvire.objects.get(pk=id)
-        popis = zvire.popis.rstrip(".")
-        return render(request, "informace/zvire.html", {
-            "zvire": zvire,
-            "nadpis": f"{zvire.druh.lower()} {zvire.jmeno.title()}",
-            "popis": popis
-        })
-    except:
-        return HttpResponseNotFound(f"Zvíře s číslem {id} není v naší zoo.")
+    # try:
+    #     zvire = Zvire.objects.get(pk=id)
+    # except:
+    #     return Http404()
+    zvire = get_object_or_404(Zvire, pk=id)
+
+    popis = zvire.popis.rstrip(".")
+    return render(request, "informace/zvire.html", {
+        "zvire": zvire,
+        "nadpis": f"{zvire.druh.lower()} {zvire.jmeno.title()}",
+        "popis": popis
+    })
 
 def seznam(request):
     zvirata = Zvire.objects.all()
