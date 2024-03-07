@@ -14,7 +14,7 @@ Seznam zvířat
 
 <ul>
     {% for zvire in seznam %}
-    <li><a href="{% url 'zvire' zvire %}">{{ zvire|capfirst }}</a></li>
+    <li><a href="{% url 'zvire' zvire %}"> {{ zvire.druh|lower }} {{ zvire.jmeno|capfirst }}</a></li>
     {% endfor %}
 </ul>
 

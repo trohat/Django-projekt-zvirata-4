@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from datetime import datetime
 
+from .models import Zvire
+
 # Create your views here.
 
 slovnik = {
@@ -34,8 +36,9 @@ def o_zvireti(request, zvire):
         return HttpResponseNotFound(f"{zvire} není v naší zoo.")
 
 def seznam(request):
+    zvirata = Zvire.objects.all()
     return render(request, "informace/seznam.html", {
-        "seznam": list(slovnik.keys())
+        "seznam": zvirata
     })
 
 def zirafa(request):
