@@ -1,0 +1,14 @@
+Naklonovat repo:
+git clone <adresa repozitáře> .
+git clone <adresa repozitáře>
+
+přepnout se do staršího commitu:
+git checkout <prvních sedm číslic z čísla commitu>
+
+přepnout se do aktuálního commitu:
+git checkout <jméno větve, obvykle main>
+git checkout main
+
+zjistit jak se jmenují větve:
+git branch
+

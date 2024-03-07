@@ -20,3 +20,10 @@ dynamický - mění se (pro nás Django-verze HTML)
 
 view může být funkce nebo třída
 tedy, view funkce nebo class-based view
+
+
+vztahy v databázi:
+one-to-many - autoři a knihy
+many-to-many - rodiče a děti, knihy a autoři pokud může jednu knihu napsat víc lidí
+one-to-one - mozek a člověk, auto a motor
+
