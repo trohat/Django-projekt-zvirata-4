@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "informace/style.css" %}">
+{% endblock %}
+
+{% block title %}
+Poděkování
+{% endblock %}
+
+{% block hlavni %}
+<h1>Zvíře úspěšně přidáno</h1>
+<h2>Děkuji za přidání zvířete</h2>
+
+
+<a href="{% url 'uvod' %}">Zpět na úvodní stránku</a>
+{% endblock hlavni %}

@@ -7,6 +7,8 @@ urlpatterns = [
     # path("<int:zvire>/", views.cislo),
     path("<int:id>/", views.o_zvireti, name="zvire"),
     # path("<kategorie>/<druh>/", views.taxonomie),
-    path("", views.o_zviratech, name="o_zviratech")
+    path("", views.o_zviratech, name="o_zviratech"),
+    path("pridani/", views.pridej, name="pridani"),
+    path("podekovani/", views.dekuji, name="dekuji")
 ]
 

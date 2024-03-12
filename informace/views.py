@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import Http404, HttpResponse, HttpResponseNotFound
+from django.urls import reverse
+from django.http import Http404, HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from datetime import datetime
 
 from .models import Zvire
+from .forms import ZvireForm
 
 # Create your views here.
 
@@ -44,6 +46,28 @@ def index(request):
         "sef": sef,
         "pocet": pocet_zvirat
     })
+
+def pridej(request):
+    if request.method == "POST":
+        formular = ZvireForm(request.POST)
+        if formular.is_valid():
+            #zde dochází ke zpracování dat
+            zvire = Zvire(jmeno=formular.cleaned_data["jmeno"],
+                        druh=formular.cleaned_data["druh"],
+                        vek=formular.cleaned_data["vek"],
+                        popis=formular.cleaned_data["popis"],
+                        pavilon=formular.cleaned_data["pavilon"]
+                            )
+            zvire.save()
+            return HttpResponseRedirect(reverse("dekuji"))
+    else:
+        formular = ZvireForm()
+    return render(request, "informace/pridani.html", {
+        "formular": formular
+    })
+
+def dekuji(request):
+    return render(request, "informace/dekuji.html")
 
 """
 starý kód, na něm jsme se učili routování a filtry v šablonách

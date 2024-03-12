@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "informace/style.css" %}">
+{% endblock %}
+
+{% block title %}
+Nové zvíře
+{% endblock %}
+
+{% block hlavni %}
+<h1>Formulář pro přidání zvířete</h1>
+
+<form action="" method="POST">
+    {%  csrf_token %}
+    {% comment %} {{ formular.as_p}} {% endcomment %}
+
+    {% for policko in formular %}
+     
+    <div class="label">
+         {{ policko.label_tag }}
+    </div>
+    <div class="pole">
+        {{ policko }}
+    </div>
+    <div class="chyby">
+        {{ policko.errors }}
+    </div>
+    
+    {% endfor %}
+    <button>Odešli</button>
+</form>
+
+<a href="{% url 'uvod' %}">Zpět na úvodní stránku</a>
+{% endblock hlavni %}

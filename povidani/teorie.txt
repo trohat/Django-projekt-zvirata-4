@@ -25,5 +25,8 @@ tedy, view funkce nebo class-based view
 vztahy v databázi:
 one-to-many - autoři a knihy
 many-to-many - rodiče a děti, knihy a autoři pokud může jednu knihu napsat víc lidí
-one-to-one - mozek a člověk, auto a motor
+one-to-one - mozek a člověk, auto a motor, hlavní město a stát, občanka a člověk
 
+authentication and authorization
+
+formuláře
